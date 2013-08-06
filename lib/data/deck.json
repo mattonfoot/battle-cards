@@ -1,0 +1,18 @@
+{
+  "Black Costume Spider-Man": {
+    Desc: "Spider-Man discovered a sleek black costume and tried it on.",
+    Agility: 10,
+    Technology: 20,
+    Strength: 72,
+    Terror: 90,
+    Brains: 10
+  },
+  "Lizard": {
+    Desc: "Doctor Curt Connors tried to regrow an arm with reptilian DNA, but the mixture was so powerful, it transformed him into a 6-foot savage lizard with a mean tail.",
+    Agility: 4,
+    Technology: 3,
+    Strength: 73,
+    Terror: 153,
+    Brains: 4
+  }
+}
