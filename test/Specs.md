@@ -5,21 +5,21 @@ Set Up a  Game
 I want to be able to set up a game of battle cards  
 In order to be ready to play against other players**
 
-Given a group of players  
+Given a Game has a group of players  
 When the game is about to begin  
 Then a random player will be assigned as the dealer
 
-Given a dealer has been assigned  
+Given a player has been assigned as the dealer  
 When the dealer chooses a theme for the game  
 Then the deck for the chosen theme will be prepared
 
-Given a dealer has a prepared deck of cards  
+Given a dealer has prepared a deck of cards  
 When the dealer shuffles the deck  
 Then the cards in the deck will be randomly ordered
 
-Given a dealer has a shuffled deck of cards  
+Given a dealer has shuffled a deck of cards  
 When the dealer has dealt out the cards to each of the players  
-Then each player will have the same number of cards
+Then each player will have the same number of cards in their pile
 
 ---
 
@@ -48,7 +48,7 @@ When they compare the category values against each other
 Then they will be able to identify which player is the winner of the trick
 
 Given a leading player has been given all the category values  
-	And more than one category values are equally best  
+	And more than one category value are equally best  
 When they compare the category values against each other  
 Then they will be able to identify that the trick is a draw
 
@@ -61,17 +61,17 @@ The Trick has a winner
 I want to be able to win a Trick  
 In order to collect all the cards**
 
-Given a player has been identified as the winner of a trick  
-When a trick has finished  
-Then the trick winner will place the cards on the bottom of their pile
+Given a Trick has been identified as having a winner  
+When the trick has finished  
+Then the winner of the trick will place the cards on the bottom of their pile
 
-Given a player has been identified as the winner of a trick  
-When a trick has finished  
-Then the trick winner will place the cards from the centre on the bottom of their pile
+Given a Trick has been identified as having a winner  
+When the trick has finished  
+Then the winner of the trick will place the cards from the centre on the bottom of their pile
 
-Given a player has been identified as the winner of a trick  
-When a trick has finished  
-Then they will be identified as the lead player for the next trick
+Given a Trick has been identified as having a winner  
+When the trick has finished  
+Then the winner of the trick will be identified as the lead player for the next trick
 
 ---
 
