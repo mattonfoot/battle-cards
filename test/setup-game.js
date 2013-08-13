@@ -2,6 +2,12 @@ var chai = require("chai");
 
 chai.should();
 
+// Card
+
+function Card(name) {
+  this.name = name;
+}
+
 // Player
 
 function Player(name) {
@@ -29,18 +35,26 @@ GameBuilder.prototype = {
 // Game
 
 function Game(players) {
+  var g = this;
+
   this.players = players;
 
   this.dealer = {
-	player: new Player('dealer')
+	player: new Player('dealer'),
+
+	chooseTheme: function(theme) {
+		g.deck = {
+			theme: theme,
+
+			cards: [new Card('card one'), new Card('card two')]
+		};
+	}
   };
 }
 
 Game.prototype = {
   begin: function() {
-    this.dealer = {
-      player: this.players[0]
-    };
+    this.dealer.player = this.players[0];
   }
 };
 
@@ -70,11 +84,29 @@ describe('Given a Game has a group of players', function() {
   });
 });
 
-/*
+describe('Given a player has been assigned as the dealer', function() {
 
-Given a player has been assigned as the dealer
-When the dealer chooses a theme for the game
-Then the deck for the chosen theme will be prepared
+  var player1 = new Player('player one');
+  var player2 = new Player('player two');
+
+  var game = Game.withPlayer(player1).withPlayer(player2).create();
+
+  game.begin();
+
+  describe('When the dealer chooses a theme for the game', function() {
+
+	game.dealer.chooseTheme('test-theme');
+
+	it('Then the deck for the chosen theme will be prepared', function() {
+
+		game.deck.theme.should.equal('test-theme');
+
+		game.deck.cards.length.should.equal(2);
+	});
+  });
+});
+
+/*
 
 Given a dealer has prepared a deck of cards
 When the dealer shuffles the deck
