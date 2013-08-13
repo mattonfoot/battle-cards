@@ -2,12 +2,60 @@ var chai = require("chai");
 
 chai.should();
 
+// Player
+
+function Player(name) {
+  this.name = name;
+}
+
+// GameBuilder
+
+function GameBuilder(player) {
+  this.players = [player];
+}
+
+GameBuilder.prototype = {
+  withPlayer: function(player) {
+    this.players.push(player);
+
+    return this;
+  },
+
+  create: function() {
+  	return new Game(this.players);
+  }
+};
+
+// Game
+
+function Game(players) {
+  this.players = players;
+
+  this.dealer = {
+	player: new Player('dealer')
+  };
+}
+
+Game.prototype = {
+  begin: function() {
+    this.dealer = {
+      player: this.players[0]
+    };
+  }
+};
+
+Game.withPlayer = function(player) {
+  var gb = new GameBuilder(player);
+
+  return gb;
+};
+
 // scenarios
 
 describe('Given a Game has a group of players', function() {
 
   var player1 = new Player('player one');
-  Var player2 = new Player('player two');
+  var player2 = new Player('player two');
 
   var game = Game.withPlayer(player1).withPlayer(player2).create();
 
