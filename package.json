@@ -11,7 +11,7 @@
 		"start": "node ./node_modules/nodemon/nodemon.js ./lib/init.js",
 
 		"pretest": "node ./node_modules/jshint/bin/jshint ./lib",
-		"test": "node ./node_modules/mocha/bin/mocha --watch --ui bdd  --reporter Spec"
+		"test": "node ./node_modules/mocha/bin/mocha --watch --ui bdd --reporter spec"
 	},
 
 	"repository": {
