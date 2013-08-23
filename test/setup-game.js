@@ -35,20 +35,19 @@ GameBuilder.prototype = {
 // Game
 
 function Game(players) {
-  var g = this;
+  var game = this;
 
-  this.players = players;
+  game.players = players;
 
-  this.dealer = {
-	player: new Player('dealer'),
+  game.dealer = {
+    player: new Player('dealer'),
 
-	chooseTheme: function(theme) {
-		g.deck = {
-			theme: theme,
-
-			cards: [new Card('card one'), new Card('card two')]
-		};
-	}
+    chooseTheme: function(theme) {
+      game.deck = {
+        theme: theme,
+        cards: [new Card('card one'), new Card('card two')]
+      };
+    }
   };
 }
 
@@ -100,7 +99,6 @@ describe('Given a player has been assigned as the dealer', function() {
 	it('Then the deck for the chosen theme will be prepared', function() {
 
 		game.deck.theme.should.equal('test-theme');
-
 		game.deck.cards.length.should.equal(2);
 	});
   });

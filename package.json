@@ -8,8 +8,6 @@
 	"main": "./lib/init",
 
 	"scripts": {
-		"start": "node ./node_modules/nodemon/nodemon.js ./lib/init.js",
-
 		"pretest": "node ./node_modules/jshint/bin/jshint ./lib",
 		"test": "node ./node_modules/mocha/bin/mocha --watch --ui bdd --reporter spec"
 	},
@@ -34,13 +32,13 @@
 	},
 
 	"dependencies": {
-		"nodemon": "*"
 	},
 
 	"devDependencies": {
-		"mocha": "*",
-		"chai": "*",
-		"jshint": "*"
+		"mocha": "~1.12.0",
+		"chai": "~1.7.2",
+		"jshint": "~2.1.9",
+		"nodemon": "~0.7.10"
 	},
 
 	"jshintConfig": {
